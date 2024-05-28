@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,safari,chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Files/Icon Img.png" type="image/x-icon"> 
+</head>
+<body>
+    <header>
+        <h1>Temperature Converter</h1>
+    </header>
+    <div id="container">
+        <div id="converter">
+            <label for="from" class="lbl">Convert From 
+                <select id="from" required>
+                    <option value="null" selected>---Select---</option>
+                    <option value="celsius" >Celsius</option>
+                    <option value="farenheit">Farenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+            </label>
+    
+            <label for="to"  class="lbl">Convert To
+                <select id="to" required>
+                    <option value="null" selected>---Select---</option>
+                    <option value="celsius" >Celsius</option>
+                    <option value="farenheit">Farenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+            </label>
+            
+            <p style="font-size: 19px;">Enter the Temperature Here:</p>
+            <input type="number" class="ipbox" id="frominput" placeholder="Enter the value here" style="width: 50vh;">
+            <br><br><br><br>
+            <center><button type="submit" id="submit" onclick="submitFunc()">Submit</button></center>
+            <br>
+            <p style="font-size: 19px;">Converted Temperature :</p>
+            <p id="output" style="color: black;"></p>
+        </div>
+    </div>
+    <script>
+        function submitFunc()
+        {
+            var inpTemp=Number(document.getElementById("frominput").value);
+            var from1=document.getElementById("from").value;
+            var to1=document.getElementById("to").value;
+            var temp;
+            if (from1==="celsius" && to1==="farenheit") 
+            {
+                temp=((9/5)*inpTemp)+32;    
+                document.getElementById("output").innerHTML=temp;
+            }
+            else if (from1==="celsius" && to1==="kelvin") 
+            {
+                temp=inpTemp+273.15;
+                document.getElementById("output").innerHTML=temp;
+            } 
+            else if (from1==="farenheit" && to1==="celsius") 
+            {
+                temp=(inpTemp-32)*(5/9);
+                document.getElementById("output").innerHTML=temp;
+            } 
+            else if (from1==="farenheit" && to1==="kelvin") 
+            {
+                temp=(inpTemp-32)*(5/9)+273.15;   
+                document.getElementById("output").innerHTML=temp; 
+            }
+            else if (from1==="kelvin" && to1==="celsius") 
+            {
+                temp=inpTemp-273.15;
+                document.getElementById("output").innerHTML=temp;
+            } 
+            else if (from1==="kelvin" && to1==="farenheit") 
+            {
+                temp=((inpTemp-273.15)*(9/5))+32;
+                document.getElementById("output").innerHTML=temp;
+            } 
+            else if(from1===to1)
+            {
+                temp=inpTemp;
+                document.getElementById("output").innerHTML=temp;
+            }
+            else if(from1==="null" || to1==="null")
+            {
+                document.getElementById("output").innerHTML="Please input the units of temperature"
+            }
+            
+        }
+    </script>
+    <footer>
+        <p>For Complaints Mail us <a href="mailto:tyvn789@gmail.com" style="text-decoration: none;">Here</a></p>
+    </footer>
+
+</body>
+</html>

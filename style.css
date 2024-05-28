@@ -1,0 +1,91 @@
+body
+{
+    background-image: url("Files/BackGroundImg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    overflow-x: hidden;
+    width: 100dvw;
+}
+header
+{
+    /* display: flex;
+    text-align: center;
+    justify-content: center; */
+    position: absolute;
+    text-align: center;
+    background-color: tomato;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px;
+}
+.lbl
+{
+    font-size: 19px;
+}
+select
+{
+    margin: 10px;
+    height: 25px;
+    width: 95%;
+    display: flex;
+    padding: 5px;
+}
+#container
+{
+    display: flex;
+    flex-wrap: wrap;
+    scroll-behavior: auto;
+}
+#converter
+{
+    margin: 10px;
+    padding: 10px;
+    background-color: tomato;
+    color: white;
+    border: 3px solid black;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.ipbox
+{
+    margin: 5px;
+    padding: 5px;
+}
+button
+{
+    height: 30px;
+    width: 15vh;
+    cursor: pointer;
+}
+#submit
+{
+    font-size: 18px;
+}
+button:hover:not(.active)
+{
+    background-color:aqua;
+    
+}
+#output
+{
+    border: 1px solid black;
+    height: 30px;
+    background-color: whitesmoke;
+    padding: 3px;
+}
+footer 
+{
+    background-color: tomato;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    color: white;
+  }
